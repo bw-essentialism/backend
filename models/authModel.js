@@ -32,6 +32,5 @@ const deleteUser = async id => {
 module.exports = {
   getUser,
   registerUser,
-  updateUser,
   deleteUser
 };
