@@ -2,10 +2,10 @@ const db = require('../utilities/dbConfig');
 
 const getUserValues = async user_id => {
   return await db('user-values')
-    .leftJoin('default-values', 'default-values.id', 'default_value_id')
+    .leftJoin('values', 'values.id', 'value_id')
     .select(
       'user-values.id as id',
-      'default_value_name',
+      'value_name',
     )
     .where({ 'user-values.user_id': user_id });
 };
