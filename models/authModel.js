@@ -2,12 +2,7 @@ const bcrypt = require('bcryptjs');
 
 const db = require('../utilities/dbConfig');
 
-module.exports = {
-    getUser,
-    registerUser,
-    updateUser,
-    deleteUser
-  };
+
 
 const getUser = async username => {
   return await db('users')
@@ -34,3 +29,9 @@ const deleteUser = async id => {
     .del();
 };
 
+module.exports = {
+  getUser,
+  registerUser,
+  updateUser,
+  deleteUser
+};
