@@ -28,7 +28,7 @@ router.get('/:user_id', (req, res) => {
   router.post('/', (req, res) => {
     const { user_id, value_id } = req.body;
   
-    // ADD USER-VALUE WITH CREATED_VALUE_ID
+
     if (user_id && value_id) {
       userValues
         .addUserValue({ user_id, value_id })
