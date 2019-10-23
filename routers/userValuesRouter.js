@@ -25,3 +25,4 @@ router.get('/:user_id', (req, res) => {
       });
   });
 
+  module.exports = router;
