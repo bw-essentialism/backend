@@ -15,7 +15,7 @@ exports.seed = function(knex) {
       password: bcrypt.hashSync('qwe', 8),
       created_at: knex.fn.now(),
       email: 'josh@gmail.com',
-      firstName: 'Joshua',
+      firstName: 'Josh',
       lastName: 'Cooter'
     },
     {
