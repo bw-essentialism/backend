@@ -7,17 +7,12 @@ const restricted = require('../utilities/restricted-middleware');
 const router = express.Router();
 router.use(express.json());
 
-
-const error404 = {
-  message: "The resource doesn't exist"
-};
-
 const error500 = {
   message: "Something went wrong when getting your request."
 };
 
-// GET ALL DEFAULT_VALUES
-// router.get('/', restricted,(req, res) => {
+// GET ALL VALUES
+
 router.get('/', (req, res) => {
   defaultValues.getValues()
     .then(data => {
