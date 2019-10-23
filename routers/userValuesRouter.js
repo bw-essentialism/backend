@@ -25,4 +25,25 @@ router.get('/:user_id', (req, res) => {
       });
   });
 
+  router.post('/', (req, res) => {
+    const { user_id, value_id } = req.body;
+  
+    // ADD USER-VALUE WITH CREATED_VALUE_ID
+    if (user_id && value_id) {
+      userValues
+        .addUserValue({ user_id, value_id })
+        .then(values => {
+          if (values.length < 1) {
+            res
+              .status(404)
+              .json({ message: `No user with id of ${user_id}` });
+          } else {
+            res.status(200).json(values);
+          }
+        })
+        .catch(() => {
+          res.status(500);
+        });
+      }});
+
   module.exports = router;
