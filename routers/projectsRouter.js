@@ -8,7 +8,7 @@ const Projects = require('../models/projectsModel');
 // tbd
 
 // helpers
-const responseHandler = require('../../helpers/responseHandler');
+//const responseHandler = require('../../helpers/responseHandler');
 
 // routes
 
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
         res.status(200).json(projects);
     })
     .catch(err => {
-        responseHandler(res, 500, "error getting all projects");
+      //  responseHandler(res, 500, "error getting all projects");
     });
 });
 
@@ -32,7 +32,7 @@ router.get('/:id', (req, res) => {
         res.status(200).json(project);
     })
     .catch(err => {
-        responseHandler(res, 500, "error getting project id");
+      //  responseHandler(res, 500, "error getting project id");
     });
 });
 
@@ -45,7 +45,7 @@ router.post('/', (req, res) => {
         res.status(200).json(payload);
     })
     .catch(err => {
-        responseHandler(res, 500, "error adding new project");
+      //  responseHandler(res, 500, "error adding new project");
     });
 });
 
