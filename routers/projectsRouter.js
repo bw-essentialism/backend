@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // model
-const Projects = require('./projectsModel');
+const Projects = require('../models/projectsModel');
 
 // middleware
 // tbd
