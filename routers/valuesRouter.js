@@ -23,7 +23,15 @@ router.get('/', (req, res) => {
     });
 });
 
-
+router.post('/', (req, res) => {
+  defaultValues.getValues()
+    .then(data => {
+      res.status(200).json(data);
+    })
+    .catch(() => {
+      res.status(500).json(error500);
+    });
+});
 
 
 
