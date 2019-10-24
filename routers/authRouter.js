@@ -87,7 +87,7 @@ router.get('/', (req, res) => {
       });
   });
 
-// DELETE USER
+// DELETE
 
   router.delete('/:id', (req, res) => {
     const { id } = req.params;
