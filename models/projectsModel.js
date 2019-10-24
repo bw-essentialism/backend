@@ -1,5 +1,5 @@
 // config db
-const db = require('../../data/dbConfig');
+const db = require('../utilities/dbConfig');
 
 // export functions
 module.exports = {

@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
         res.status(200).json(payload);
     })
     .catch(err => {
-        responseHandler(res, 500, "error updating project");
+      //  responseHandler(res, 500, "error updating project");
     });
 });
 
@@ -74,14 +74,14 @@ router.delete('/:id', (req, res) => {
         json(200).json({ message: "project successfully deleted" });
     })
     .catch(err => {
-        responseHandler(res, 500, "error deleting project");
+     //   responseHandler(res, 500, "error deleting project");
     });
 });
 
-// fallback
+/* fallback
 router.use('/', (req, res) => {
     responseHandler(res, 200, "hi from projectsRouter");
 })
-
+*/
 // export
 module.exports = router;
