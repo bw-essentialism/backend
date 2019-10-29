@@ -1,6 +1,7 @@
 const express = require('express');
 const userValues = require('../models/userValuesModel');
-const Values = require('../models/valuesModel');
+const Values, Users = require('../models/valuesModel');
+
 //
 const restricted = require('../utilities/restricted-middleware');
 
@@ -36,6 +37,19 @@ router.get('/:user_id', (req, res) => {
     .catch(err => {
         res.status(500).json(err)
     });
+});
+
+router.delete('/:id/values/:valueId', (req, res) => {
+  const { id, valueId } = req.params;
+  console.log(id, valueId)
+
+  Users.removeValues(id, valueId)
+  .then(removedValue => {
+      res.status(200).json(removedValue);
+  })
+  .catch(err => {
+      responseHandler(res, 500, "error removing value from user");
+  });
 });
 
   module.exports = router;
