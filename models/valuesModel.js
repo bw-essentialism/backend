@@ -45,7 +45,7 @@ function addUserValue(userId, valueId) {
 }
 
 function removeValues(id, valueId) {
-    return db('users_values')
+    return db('user-values')
         .where({ user_id: id, value_id: valueId })
         .del()
 }
