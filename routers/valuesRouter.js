@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', valueValidator, (req, res) => {
+router.post('/',  (req, res) => {
   const payload = req.body;
   
   Values.add(payload)
