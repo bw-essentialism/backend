@@ -49,6 +49,16 @@ router.put('/:id', (req, res) => {
 
 });
 
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
 
+  Values.remove(id)
+  .then(value => {
+      res.status(200).json({ message: "value deleted" });
+  })
+  .catch(err => {
+      responseHandler(res, 500, "error deleting value");
+  });
+});
 
 module.exports = router;
