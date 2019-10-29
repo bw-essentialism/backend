@@ -35,6 +35,20 @@ router.post('/',  (req, res) => {
   });
 });
 
+router.put('/:id', (req, res) => {
+  const id = req.params.id;
+  const payload = req.body;
+
+  Values.update(id, payload)
+  .then(updatedValue => {
+      res.status(200).json(payload);
+  })
+  .catch(err => {
+      responseHandler(res, 500, "error updating value");
+  });
+
+});
+
 
 
 module.exports = router;
