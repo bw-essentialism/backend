@@ -1,5 +1,6 @@
 const express = require('express');
 const userValues = require('../models/userValuesModel');
+const Values = require('../models/valuesModel');
 //
 const restricted = require('../utilities/restricted-middleware');
 

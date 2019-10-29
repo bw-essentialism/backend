@@ -39,6 +39,6 @@ function remove(id) {
 }
 
 function addUserValue(userId, valueId) {
-    return db('users_values')
+    return db('user-values')
         .insert({ user_id: userId, value_id: valueId })
 }
