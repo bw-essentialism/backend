@@ -1,5 +1,5 @@
 const express = require('express');
-const defaultValues = require('../models/valuesModel');
+const Values = require('../models/valuesModel');
 
 const restricted = require('../utilities/restricted-middleware');
 
@@ -14,7 +14,7 @@ const error500 = {
 // GET ALL VALUES
 
 router.get('/', (req, res) => {
-  defaultValues.getValues()
+  Values.getValues()
     .then(data => {
       res.status(200).json(data);
     })
@@ -23,14 +23,16 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
-  defaultValues.getValues()
-    .then(data => {
-      res.status(200).json(data);
-    })
-    .catch(() => {
-      res.status(500).json(error500);
-    });
+router.post('/', valueValidator, (req, res) => {
+  const payload = req.body;
+  
+  Values.add(payload)
+  .then(value => {
+      res.status(200).json(payload);
+  })
+  .catch(err => {
+      responseHandler(res, 500, "error adding value");
+  });
 });
 
 
